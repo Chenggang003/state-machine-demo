@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.2:3306/fsm?characterEncoding=UTF-8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&connectTimeout=0&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: Wmi@2023
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml # 如果你的Mapper XML文件放在了这个位置
+  type-aliases-package: com.demo.entity # 你的实体类所在的包
+  global-config:
+    db-config:
+      id-type: auto # 设置全局主键生成策略
+      field-strategy: not_empty # 字段策略，not_empty 表示非空判断
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
